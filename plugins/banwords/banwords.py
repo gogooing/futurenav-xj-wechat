@@ -28,22 +28,15 @@ class Banwords(Plugin):
             config_path = os.path.join(curdir, "config.json")
             conf = None
             if not os.path.exists(config_path):
-                logger.warn(f"[Banwords]dir path exists: {curdir}")
                 conf = {"action": "ignore"}
                 with open(config_path, "w") as f:
                     json.dump(conf, f, indent=4)
             else:
-                logger.warn(f"[Banwords]dir path no exists: {curdir}")
                 with open(config_path, "r") as f:
                     conf = json.load(f)
             self.searchr = WordsSearch()
             self.action = conf["action"]
             banwords_path = os.path.join(curdir, "banwords.txt")
-
-            if not os.path.exists(banwords_path):
-                logger.warn(f"[Banwords]word path exists: {banwords_path}")
-            else:    
-                logger.warn(f"[Banwords]word path no exists: {banwords_path}")
 
             with open(banwords_path, "r", encoding="utf-8") as f:
                 words = []
