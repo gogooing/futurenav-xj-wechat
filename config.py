@@ -20,9 +20,9 @@ available_setting = {
     "use_azure_chatgpt": False,  # 是否使用azure的chatgpt
     "azure_deployment_id": "",  # azure 模型部署名称
     # Bot触发配置
-    "single_chat_prefix": ["bot", "@bot"],  # 私聊时文本需要包含该前缀才能触发机器人回复
-    "single_chat_reply_prefix": "[bot] ",  # 私聊时自动回复的前缀，用于区分真人
-    "group_chat_prefix": ["@bot"],  # 群聊时包含该前缀则会触发机器人回复
+    "single_chat_prefix": ["晓君", "@晓君"],  # 私聊时文本需要包含该前缀才能触发机器人回复
+    "single_chat_reply_prefix": "[晓君] ",  # 私聊时自动回复的前缀，用于区分真人
+    "group_chat_prefix": ["@晓君"],  # 群聊时包含该前缀则会触发机器人回复
     "group_chat_reply_prefix": "",  # 群聊时自动回复的前缀
     "group_chat_keyword": [],  # 群聊时包含该关键词则会触发机器人回复
     "group_at_off": False,  # 是否关闭群聊时@bot的触发
