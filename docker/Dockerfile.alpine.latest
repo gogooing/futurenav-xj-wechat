@@ -1,6 +1,6 @@
 FROM python:3.10-alpine
 
-LABEL maintainer="foo@bar.com"
+LABEL maintainer="support@zhenxiang.life"
 ARG TZ='Asia/Shanghai'
 
 ARG CHATGPT_ON_WECHAT_VER

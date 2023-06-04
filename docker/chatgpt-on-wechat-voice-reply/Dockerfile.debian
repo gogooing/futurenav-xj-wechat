@@ -1,6 +1,6 @@
 FROM zhayujie/chatgpt-on-wechat:debian
 
-LABEL maintainer="foo@bar.com"
+LABEL maintainer="support@zhenxiang.life"
 ARG TZ='Asia/Shanghai'
 
 USER root

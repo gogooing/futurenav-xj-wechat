@@ -10,7 +10,7 @@ body:
     attributes:
       label: ⚠️ 搜索是否存在类似issue
       description: >
-        请在 [历史issue](https://github.com/zhayujie/chatgpt-on-wechat/issues) 中清空输入框，搜索关键词查找是否存在相似issue。
+        请在 [历史issue](https://github.com/gogooing/futurenav-xj-wechat/issues) 中清空输入框，搜索关键词查找是否存在相似issue。
       options:
         - label: 我已经搜索过issues和disscussions，没有发现相似issue
           required: true

@@ -11,18 +11,18 @@ body:
         3. `git pull` 拉取最新代码
         4. 执行`pip3 install -r requirements.txt`，检查依赖是否满足
         5. 拓展功能请执行`pip3 install -r requirements-optional.txt`，检查依赖是否满足
-        6. [FAQS](https://github.com/zhayujie/chatgpt-on-wechat/wiki/FAQs) 中无类似问题
+        6. [FAQS](https://github.com/gogooing/futurenav-xj-wechat/wiki/FAQs) 中无类似问题
   - type: checkboxes
     attributes:
       label: 前置确认
       options:
-        - label: 我确认我运行的是最新版本的代码，并且安装了所需的依赖，在[FAQS](https://github.com/zhayujie/chatgpt-on-wechat/wiki/FAQs)中也未找到类似问题。
+        - label: 我确认我运行的是最新版本的代码，并且安装了所需的依赖，在[FAQS](https://github.com/gogooing/futurenav-xj-wechat/wiki/FAQs)中也未找到类似问题。
           required: true
   - type: checkboxes
     attributes:
       label: ⚠️ 搜索issues中是否已存在类似问题
       description: >
-        请在 [历史issue](https://github.com/zhayujie/chatgpt-on-wechat/issues) 中清空输入框，搜索你的问题
+        请在 [历史issue](https://github.com/gogooing/futurenav-xj-wechat/issues) 中清空输入框，搜索你的问题
         或相关日志的关键词来查找是否存在类似问题。
       options:
         - label: 我已经搜索过issues和disscussions，没有跟我遇到的问题相关的issue
@@ -66,7 +66,7 @@ body:
     attributes:
       label: 使用的chatgpt-on-wechat版本是?
       description: |
-        请确保你使用的是 [releases](https://github.com/zhayujie/chatgpt-on-wechat/releases) 中的最新版本。
+        请确保你使用的是 [releases](https://github.com/gogooing/futurenav-xj-wechat/releases) 中的最新版本。
         如果你使用git, 请使用`git branch`命令来查看分支。
       options:
         - Latest Release
@@ -77,7 +77,7 @@ body:
     attributes:
       label: 运行的`channel`类型是?
       description: |
-        请确保你正确配置了该`channel`所需的配置项，所有可选的配置项都写在了[该文件中](https://github.com/zhayujie/chatgpt-on-wechat/blob/master/config.py)，请将所需配置项填写在根目录下的`config.json`文件中。
+        请确保你正确配置了该`channel`所需的配置项，所有可选的配置项都写在了[该文件中](https://github.com/gogooing/futurenav-xj-wechat/blob/master/config.py)，请将所需配置项填写在根目录下的`config.json`文件中。
       options:
         - wx(个人微信, itchat)
         - wxy(个人微信, wechaty)
