@@ -1,5 +1,5 @@
 {
-  "open_ai_api_key": "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",
+  "open_ai_api_key": "",
   "model": "gpt-4-0314",
   "proxy": "https://xiaojunai.com/api",
   "single_chat_prefix": [
