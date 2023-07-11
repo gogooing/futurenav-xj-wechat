@@ -2,17 +2,11 @@
   "tags": {
     "favorite": "常用",
     "interviewer": "面试官",
-    "interesting": "有趣",
     "mind": "思维",
-    "write": "写作",
-    "article": "文章",
     "text": "文本",
-    "code": "编程",
-    "life": "生活百科",
     "language": "语言",
     "speech": "辩论",
     "social": "社交",
-    "philosophy":"哲学",
     "recruiter":"招聘人员"
   },
   "roles": [
