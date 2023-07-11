@@ -36,9 +36,9 @@ class RolePlay:
     name="Role",
     desire_priority=0,
     namecn="角色扮演",
-    desc="为你的Bot设置预设角色",
-    version="1.0",
-    author="lanvent",
+    desc="为你的晓君设置预设角色",
+    version="1.1",
+    author="loro",
 )
 class Role(Plugin):
     def __init__(self):
