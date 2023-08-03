@@ -24,20 +24,20 @@ class Banwords(Plugin):
     def __init__(self):
         super().__init__()
         try:
+            # load config
+            conf = super().load_config()
             curdir = os.path.dirname(__file__)
-            config_path = os.path.join(curdir, "config.json")
-            conf = None
-            if not os.path.exists(config_path):
-                conf = {"action": "ignore"}
-                with open(config_path, "w") as f:
-                    json.dump(conf, f, indent=4)
-            else:
-                with open(config_path, "r") as f:
-                    conf = json.load(f)
+            if not conf:
+                # 配置不存在则写入默认配置
+                config_path = os.path.join(curdir, "config.json")
+                if not os.path.exists(config_path):
+                    conf = {"action": "ignore"}
+                    with open(config_path, "w") as f:
+                        json.dump(conf, f, indent=4)
+
             self.searchr = WordsSearch()
             self.action = conf["action"]
             banwords_path = os.path.join(curdir, "banwords.txt")
-
             with open(banwords_path, "r", encoding="utf-8") as f:
                 words = []
                 for line in f:
@@ -51,7 +51,7 @@ class Banwords(Plugin):
                 self.reply_action = conf.get("reply_action", "ignore")
             logger.info("[Banwords] inited")
         except Exception as e:
-            logger.warn("[Banwords] init failed, ignore or see https://github.com/gogooing/futurenav-xj-wechat/tree/master/plugins/banwords .")
+            logger.warn("[Banwords] init failed, ignore or see https://github.com/zhayujie/chatgpt-on-wechat/tree/master/plugins/banwords .")
             raise e
 
     def on_handle_context(self, e_context: EventContext):

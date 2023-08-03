@@ -25,5 +25,4 @@ plugins/**/
 !plugins/hello
 !plugins/role
 !plugins/keyword
-config-xj-railway.json
-plugins/role/roles-tem.json
+!plugins/linkai

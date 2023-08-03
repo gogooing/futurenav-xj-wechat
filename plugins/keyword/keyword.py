@@ -23,7 +23,6 @@ class Keyword(Plugin):
         super().__init__()
         try:
             curdir = os.path.dirname(__file__)
-            logger.warn(f"[keyword]dir path: {curdir}")
             config_path = os.path.join(curdir, "config.json")
             conf = None
             if not os.path.exists(config_path):
@@ -42,7 +41,7 @@ class Keyword(Plugin):
             self.handlers[Event.ON_HANDLE_CONTEXT] = self.on_handle_context
             logger.info("[keyword] inited.")
         except Exception as e:
-            logger.warn("[keyword] init failed, ignore or see https://github.com/gogooing/futurenav-xj-wechat/tree/master/plugins/keyword .")
+            logger.warn("[keyword] init failed, ignore or see https://github.com/zhayujie/chatgpt-on-wechat/tree/master/plugins/keyword .")
             raise e
 
     def on_handle_context(self, e_context: EventContext):
@@ -55,9 +54,18 @@ class Keyword(Plugin):
             logger.debug(f"[keyword] 匹配到关键字【{content}】")
             reply_text = self.keyword[content]
 
-            reply = Reply()
-            reply.type = ReplyType.TEXT
-            reply.content = reply_text
+            # 判断匹配内容的类型
+            if (reply_text.startswith("http://") or reply_text.startswith("https://")) and any(reply_text.endswith(ext) for ext in [".jpg", ".jpeg", ".png", ".gif", ".webp"]):
+                # 如果是以 http:// 或 https:// 开头，且.jpg/.jpeg/.png/.gif结尾，则认为是图片 URL
+                reply = Reply()
+                reply.type = ReplyType.IMAGE_URL
+                reply.content = reply_text
+            else:
+            # 否则认为是普通文本
+                reply = Reply()
+                reply.type = ReplyType.TEXT
+                reply.content = reply_text
+            
             e_context["reply"] = reply
             e_context.action = EventAction.BREAK_PASS  # 事件结束，并跳过处理context的默认逻辑
 
