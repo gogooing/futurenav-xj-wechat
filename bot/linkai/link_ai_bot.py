@@ -22,7 +22,6 @@ class LinkAIBot(Bot, OpenAIImage):
 
     def __init__(self):
         super().__init__()
-        self.base_url = "https://api.link-ai.chat/v1"
         self.sessions = SessionManager(ChatGPTSession, model=conf().get("model") or "gpt-3.5-turbo")
 
     def reply(self, query, context: Context = None) -> Reply:
@@ -64,15 +63,16 @@ class LinkAIBot(Bot, OpenAIImage):
             session_id = context["session_id"]
 
             session = self.sessions.session_query(query, session_id)
-
+            model = conf().get("model") or "gpt-3.5-turbo"
             # remove system message
-            if app_code and session.messages[0].get("role") == "system":
-                session.messages.pop(0)
+            if session.messages[0].get("role") == "system":
+                if app_code or model == "wenxin":
+                    session.messages.pop(0)
 
             body = {
                 "app_code": app_code,
                 "messages": session.messages,
-                "model": conf().get("model") or "gpt-3.5-turbo",  # 对话模型的名称
+                "model": model,     # 对话模型的名称, 支持 gpt-3.5-turbo, gpt-3.5-turbo-16k, gpt-4, wenxin
                 "temperature": conf().get("temperature"),
                 "top_p": conf().get("top_p", 1),
                 "frequency_penalty": conf().get("frequency_penalty", 0.0),  # [-2,2]之间，该值越大则更倾向于产生不同的内容
@@ -82,7 +82,8 @@ class LinkAIBot(Bot, OpenAIImage):
             headers = {"Authorization": "Bearer " + linkai_api_key}
 
             # do http request
-            res = requests.post(url=self.base_url + "/chat/completions", json=body, headers=headers,
+            base_url = conf().get("linkai_api_base", "https://api.link-ai.chat")
+            res = requests.post(url=base_url + "/v1/chat/completions", json=body, headers=headers,
                                 timeout=conf().get("request_timeout", 180))
             if res.status_code == 200:
                 # execute success
