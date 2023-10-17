@@ -37,7 +37,7 @@ class RolePlay:
     desire_priority=0,
     namecn="角色扮演",
     desc="为你的晓君设置预设角色",
-    version="1.1",
+    version="1.2",
     author="loro",
 )
 class Role(Plugin):
