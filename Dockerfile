@@ -1,3 +1,3 @@
-FROM ghcr.io/gogooing/futurenav-xj-wechat:master-arm64
+FROM ghcr.io/gogooing/futurenav-xj-wechat:master
 
 ENTRYPOINT ["/entrypoint.sh"]
