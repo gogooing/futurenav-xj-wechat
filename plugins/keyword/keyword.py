@@ -15,7 +15,7 @@ from plugins import *
     desire_priority=900,
     hidden=True,
     desc="关键词匹配过滤",
-    version="0.1",
+    version="0.2",
     author="fengyege.top",
 )
 class Keyword(Plugin):
