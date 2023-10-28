@@ -1,19 +1,19 @@
 {
-    "group_app_map": {               # 群聊 和 应用编码 的映射关系
-        "测试群名称1": "default",      # 表示在名称为 "测试群名称1" 的群聊中将使用app_code 为 default 的应用
-        "测试群名称2": "Kv2fXJcH"
+    "group_app_map": {
+        "测试群名1": "default",
+        "测试群名2": "Kv2fXJcH"
     },
     "midjourney": {
-        "enabled": true,          # midjourney 绘画开关
-        "auto_translate": true,   # 是否自动将提示词翻译为英文
-        "img_proxy": true,        # 是否对生成的图片使用代理，如果你是国外服务器，将这一项设置为false会获得更快的生成速度
-        "max_tasks": 3,           # 支持同时提交的总任务个数
-        "max_tasks_per_user": 1,  # 支持单个用户同时提交的任务个数
-        "use_image_create_prefix": true   # 是否使用全局的绘画触发词，如果开启将同时支持由`config.json`中的 image_create_prefix 配置触发
+        "enabled": true,
+        "auto_translate": true,
+        "img_proxy": true,
+        "max_tasks": 3,
+        "max_tasks_per_user": 1,
+        "use_image_create_prefix": true
     },
     "summary": {
-        "enabled": true,              # 文档总结和对话功能开关
-        "group_enabled": true,        # 是否支持群聊开启
-        "max_file_size": 5000        # 文件的大小限制，单位KB，默认为5M，超过该大小直接忽略
+        "enabled": true,
+        "group_enabled": true,
+        "max_file_size": 5000
     }
 }
