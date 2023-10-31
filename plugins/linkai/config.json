@@ -1,12 +1,16 @@
 {
     "group_app_map": {
-        "测试群名称1": "晓君AI1",
-        "测试群名称2": "晓君AI2"
+        "晓君AI": "gwzpxZqm",
+        "晓君AI1": "gwzpxZqm",
+        "晓君AI2": "gwzpxZqm",
+        "晓君AI3": "gwzpxZqm",
+        "晓君AI4": "gwzpxZqm",
+        "晓君AI5": "gwzpxZqm"
     },
     "midjourney": {
         "enabled": true,
         "auto_translate": true,
-        "img_proxy": true,
+        "img_proxy": false,
         "max_tasks": 3,
         "max_tasks_per_user": 1,
         "use_image_create_prefix": true
