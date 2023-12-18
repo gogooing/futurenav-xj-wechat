@@ -19,7 +19,7 @@ env:
 
 jobs:
   build-and-push-image:
-    if: github.repository == '/gogooing/futurenav-xj-wechat'
+    # if: github.repository == '/gogooing/futurenav-xj-wechat'
     runs-on: ubuntu-latest
     permissions:
       contents: read
