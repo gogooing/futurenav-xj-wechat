@@ -9,7 +9,7 @@
     },
     "midjourney": {
         "enabled": true,
-        "auto_translate": false,
+        "auto_translate": true,
         "img_proxy": false,
         "max_tasks": 3,
         "max_tasks_per_user": 1,
