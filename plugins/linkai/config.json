@@ -5,7 +5,10 @@
         "晓君AI2": "gwzpxZqm",
         "晓君AI3": "gwzpxZqm",
         "晓君AI4": "gwzpxZqm",
-        "晓君AI5": "gwzpxZqm"
+        "晓君AI5": "gwzpxZqm",
+        "晓君AI6": "gwzpxZqm",
+        "未来导航2024试听课1群": "gwzpxZqm",
+        "未来导航2024试听课2群": "gwzpxZqm"
     },
     "midjourney": {
         "enabled": true,
@@ -18,7 +21,7 @@
     "summary": {
         "enabled": true,
         "group_enabled": true,
-        "max_file_size": 5000,
+        "max_file_size": 9000,
         "type": ["FILE", "SHARING", "IMAGE"]
     }
 }
