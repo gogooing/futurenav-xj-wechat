@@ -48,7 +48,7 @@ class TBTask:
 # taibaiai bot
 class TBAIBot:
     def __init__(self, config):
-        self.base_url = 'https://auto.taibaiai.com' + "/api/v1/taskwx/"
+        self.base_url = 'https://auto.taibaiai.com' + "/api/v1/taskwx"
         self.headers = {"Authorization": "Bearer " + conf().get("taibaiai_api_key")}
         self.config = config
         self.tasks = {}
