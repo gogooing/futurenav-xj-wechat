@@ -1,0 +1,10 @@
+{
+    "group_app_map": {
+        "晓君AI": "gwzpxZqm"
+    },
+    "taibaiai": {
+        "enabled": true,
+        "max_tasks": 3,
+        "max_tasks_per_user": 1
+    }
+}

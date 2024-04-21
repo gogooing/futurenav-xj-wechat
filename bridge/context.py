@@ -18,6 +18,7 @@ class ContextType(Enum):
     FUNCTION = 22  # 函数调用
     EXIT_GROUP = 23 #退出
 
+    TAIBAIAI = 99  # 太白AI命令
 
     def __str__(self):
         return self.name
