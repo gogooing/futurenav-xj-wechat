@@ -23,10 +23,7 @@ class TaibaiAI(Plugin):
             # 未加载到配置，使用模板中的配置
             self.config = self._load_config_template()
         if self.config:
-            self.tb_bot = TBAIBot(self.config.get("midjourney"))
-        self.sum_config = {}
-        if self.config:
-            self.sum_config = self.config.get("summary")
+            self.tb_bot = TBAIBot(self.config.get("taibaiai"))
         logger.info(f"[TaibaiAI] inited, config={self.config}")
 
     def _load_config_template(self):

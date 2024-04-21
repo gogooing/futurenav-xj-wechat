@@ -70,9 +70,9 @@ class TBAIBot:
             cmd_list = context.content.split(maxsplit=1)
             if not cmd_list:
                 return None
-            if cmd_list[0].lower() == f"{trigger_prefix}tbrz":
+            if (cmd_list[0].lower() == f"{trigger_prefix}tbrz") or (cmd_list[0].lower() == f"{trigger_prefix}太白软著"):
                 return TaskType.RUANZHU
-            elif cmd_list[0].lower() == f"{trigger_prefix}tbzl":
+            elif (cmd_list[0].lower() == f"{trigger_prefix}tbzl") or (cmd_list[0].lower() == f"{trigger_prefix}tbzl"):
                 return TaskType.ZHUANLI
             
     def process_taibai_task(self, tb_type: TaskType, e_context: EventContext):
