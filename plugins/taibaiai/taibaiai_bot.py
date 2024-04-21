@@ -262,10 +262,16 @@ class TBAIBot:
         while max_retry_times > 0:
             time.sleep(10)
             url = f"{self.base_url}/getTask/{task.id}"
+            print(f'url = {url}')
+            logger.error(f'url = {url}')
             try:
-                res = requests.get(url, headers=self.headers, timeout=8)
+                res = requests.get(url, headers=self.headers, timeout=20)
+                print(f'res = {res}')
+                logger.error(f'res = {res}')
                 if res.status_code == 200:
                     res_json = res.json()
+                    print(f'res_json = {res_json}')
+                    logger.error(f'res_json = {res_json}')
                     logger.debug(f"[TB] task check res sync, task_id={task.id}, status={res.status_code}, "
                                  f"data={res_json.get('data')}, thread={threading.current_thread().name}")
                     if res_json.get("data") and res_json.get("data").get("code") == 200:
