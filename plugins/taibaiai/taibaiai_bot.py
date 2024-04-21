@@ -176,7 +176,9 @@ class TBAIBot:
         if not verbose:
             return help_text
         help_text += f" - 生成软著: {trigger_prefix}tbrz 软著简称|软著名称|作者名称|公司名称 \n - 生成专利: {trigger_prefix}tbzl 项目名称|发明人|公司名称"
+        help_text += f"\n - 生成软著: {trigger_prefix}太白软著 软著简称|软著名称|作者名称|公司名称 \n - 生成专利: {trigger_prefix}太白专利 项目名称|发明人|公司名称"
         help_text += f"\n\n例如：\n\"{trigger_prefix}tbrz 太白AI智能平台|太白AI企业智能化工具平台|罗锐|深圳市真香生活科技有限公司\"\n\"{trigger_prefix}tbzl 太白AI自动拆解任务和AI一键完成任务|罗锐|深圳市真香生活科技有限公司\""
+        help_text += f"\n\"{trigger_prefix}太白软著 太白AI智能平台|太白AI企业智能化工具平台|罗锐|深圳市真香生活科技有限公司\"\n\"{trigger_prefix}太白专利 太白AI自动拆解任务和AI一键完成任务|罗锐|深圳市真香生活科技有限公司\""
         return help_text
 
     def taibai_rz(self, prompt: str, user_id: str, e_context: EventContext) -> Reply:
