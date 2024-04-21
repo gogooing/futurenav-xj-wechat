@@ -262,12 +262,12 @@ class TBAIBot:
         while max_retry_times > 0:
             time.sleep(10)
             url = f"{self.base_url}/getTask/{task.id}"
-            print(f'url = {url}')
-            logger.error(f'url = {url}')
+            # print(f'url = {url}')
+            # logger.error(f'url = {url}')
             try:
                 res = requests.get(url, headers=self.headers, timeout=20)
-                print(f'res = {res}')
-                logger.error(f'res = {res}')
+                # print(f'res = {res}')
+                # logger.error(f'res = {res}')
                 if res.status_code == 200:
                     res_json = res.json()
                     print(f'res_json = {res_json}')
@@ -291,6 +291,7 @@ class TBAIBot:
         logger.warn("[TB] end from poll")
         if self.tasks.get(task.id):
             self.tasks[task.id].status = Status.EXPIRED
+            self._process_success_task(task, e_context)
 
     def _process_success_task(self, task: TBTask, res: dict, e_context: EventContext):
         """
@@ -302,6 +303,26 @@ class TBAIBot:
         # channel send img
         task.status = Status.FINISHED
         task.content = res.get("response_data")
+        logger.info(f"[TB] task success, task_id={task.id}")
+
+        # send content
+        reply = Reply(ReplyType.TEXT, task.content)
+        channel = e_context["channel"]
+        _send(channel, reply, e_context["context"])
+
+        self._print_tasks()
+        return
+    
+    def _process_fail_task(self, task: TBTask, e_context: EventContext):
+        """
+        处理任务成功的结果
+        :param task: TB任务
+        :param res: 请求结果
+        :param e_context: 对话上下文
+        """
+        # channel send img
+        task.status = Status.FINISHED
+        task.content = "任务失败"
         logger.info(f"[TB] task success, task_id={task.id}")
 
         # send content
