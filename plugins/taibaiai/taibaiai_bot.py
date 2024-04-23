@@ -123,6 +123,17 @@ class TBAIBot:
             e_context['reply'] = reply
             e_context.action = EventAction.BREAK_PASS
             return
+
+        if tb_type == TaskType.ZHUANLI:
+            if context.type == ContextType.TAIBAIAI:
+                raw_prompt = context.content
+            else:
+                # 图片生成
+                raw_prompt = cmd[1]
+            reply = self.taibai_zl(raw_prompt, session_id, e_context)
+            e_context['reply'] = reply
+            e_context.action = EventAction.BREAK_PASS
+            return
     
     def _check_rate_limit(self, user_id: str, e_context: EventContext) -> bool:
         """
@@ -238,7 +249,7 @@ class TBAIBot:
                 content += f"prompt: {prompt}"
                 reply = Reply(ReplyType.INFO, content)
                 task = TBTask(id=task_id, status=Status.PENDING, raw_prompt=prompt, user_id=user_id,
-                            task_type=TaskType.RUANZHU)
+                            task_type=TaskType.ZHUANLI)
                 # put to memory dict
                 self.tasks[task.id] = task
                 # asyncio.run_coroutine_threadsafe(self.check_task(task, e_context), self.event_loop)
